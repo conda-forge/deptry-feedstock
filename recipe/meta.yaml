@@ -11,10 +11,15 @@ source:
 
 build:
   # We have to skip Windows due to <https://github.com/conda-forge/staged-recipes/pull/26614#issuecomment-2156602195>
-  skip: true  # [py<38 or win]
+  skip: true  # [py<38]
   entry_points:
     - deptry = deptry.cli:deptry
+    # Setting CARGO_HOME is a workaround for "path too long" error on
+    # Windows due to the 260 character limit for paths, and because the
+    # ruff repo (which is a dependency) has some files with very long names.
+
   script: |
+    set "CARGO_HOME=C:\cargo"
     echo "building..."
     {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
