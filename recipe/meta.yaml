@@ -11,10 +11,11 @@ source:
 
 build:
   # We have to skip Windows due to <https://github.com/conda-forge/staged-recipes/pull/26614#issuecomment-2156602195>
-  skip: true  # [py<38 or win]
+  skip: true  # [py<38 or (not win)]
   entry_points:
     - deptry = deptry.cli:deptry
   script: |
+    powershell -Command "Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled -Value 1;"
     echo "building..."
     {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
