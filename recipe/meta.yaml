@@ -1,5 +1,5 @@
 {% set name = "deptry" %}
-{% set version = "0.16.1" %}
+{% set version = "0.16.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
-  sha256: 39fb62da4a8f4d17ed282310f7bcaadec55a95a8c471b01e0fcdf5351a7ac323
+  sha256: f0f752cf6f5e9f7445a79fcf195b772cd2d4b889cd260e23867dd8013caa74c1
 
 build:
   # We have to skip Windows due to <https://github.com/conda-forge/staged-recipes/pull/26614#issuecomment-2156602195>
@@ -23,7 +23,7 @@ build:
     echo "building..."
     {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -60,8 +60,8 @@ about:
   summary: A command line utility to check for unused, missing and transitive dependencies in a Python project.
   license: MIT
   license_file:
-  - LICENSE
-  - THIRDPARTY.yml
+    - LICENSE
+    - THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
