@@ -1,5 +1,5 @@
 {% set name = "deptry" %}
-{% set version = "0.16.2" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
-  sha256: f0f752cf6f5e9f7445a79fcf195b772cd2d4b889cd260e23867dd8013caa74c1
+  sha256: f48a71bab8f46a896fe507c8be5f2b50bb9bab0c44e4dfad00afe87e9a08c14b
 
 build:
   # We have to skip Windows due to <https://github.com/conda-forge/staged-recipes/pull/26614#issuecomment-2156602195>
