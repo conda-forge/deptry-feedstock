@@ -10,14 +10,13 @@ source:
   sha256: f48a71bab8f46a896fe507c8be5f2b50bb9bab0c44e4dfad00afe87e9a08c14b
 
 build:
-  # We have to skip Windows due to <https://github.com/conda-forge/staged-recipes/pull/26614#issuecomment-2156602195>
   skip: true  # [py<38]
   entry_points:
     - deptry = deptry.cli:deptry
     # Setting CARGO_HOME is a workaround for "path too long" error on
     # Windows due to the 260 character limit for paths, and because the
     # ruff repo (which is a dependency) has some files with very long names.
-
+    # Ref: <https://github.com/conda-forge/deptry-feedstock/issues/5>
   script: |
     set "CARGO_HOME=C:\cargo"
     echo "building..."
