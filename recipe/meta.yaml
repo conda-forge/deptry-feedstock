@@ -42,6 +42,10 @@ requirements:
     - click >=8.0.0,<9
     - colorama >=0.4.6  # [win]
     - tomli >=2.0.1  # [py<311]
+    # I don't understand where "hpy 0.9.0 requires setuptools, which is not installed."
+    # is coming from when the test environment runs pip check. Seems very annoying to
+    # track down, so let's just make this dirty workaround.
+    - setuptools  # [python_impl == 'pypy']
 
 test:
   imports:
