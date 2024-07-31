@@ -55,6 +55,7 @@ test:
     # is coming from when the test environment runs pip check. Seems very annoying to
     # track down, so let's just make this dirty workaround.
     - setuptools  # [python_impl == 'pypy']
+    - setuptools
 
 about:
   home: https://deptry.com/
