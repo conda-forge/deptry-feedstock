@@ -1,5 +1,5 @@
 {% set name = "deptry" %}
-{% set version = "0.20.0" %}
+{% set version = "0.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
-  sha256: 62e9aaf3aea9e2ca66c85da98a0ba0290b4d3daea4e1d0ad937d447bd3c36402
+  sha256: 45ad8726ea46e16b6ec2af0078d2cdf1296131a0ed05374d7b29a2c70d192910
 
 build:
   skip: true  # [py<38]
@@ -22,7 +22,7 @@ build:
     echo "building..."
     {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 1
+  number: 0
 
 requirements:
   build:
