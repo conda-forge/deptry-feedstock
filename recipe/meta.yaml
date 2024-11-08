@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
   sha256: 45ad8726ea46e16b6ec2af0078d2cdf1296131a0ed05374d7b29a2c70d192910
 
 build:
