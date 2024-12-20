@@ -1,5 +1,5 @@
 {% set name = "deptry" %}
-{% set version = "0.21.1" %}
+{% set version = "0.21.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
-  sha256: 60332b8d58d6584b340511a4e1b694048499f273d69eaea413631b2e8bc186ff
+  sha256: 4e870553c7a1fafcd99a83ba4137259525679eecabeff61bc669741efa201541
 
 build:
   skip: true  # [py<38]
