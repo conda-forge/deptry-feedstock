@@ -369,6 +369,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@Zeitsperre](https://github.com/Zeitsperre/)
 * [@fpgmaas](https://github.com/fpgmaas/)
 * [@maresb](https://github.com/maresb/)
 
