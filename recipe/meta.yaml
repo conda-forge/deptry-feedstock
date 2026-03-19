@@ -1,5 +1,5 @@
 {% set name = "deptry" %}
-{% set version = "0.24.0" %}
+{% set version = "0.25.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
-  sha256: 852e88af2087e03cdf9ece6916f3f58b74191ab51cc8074897951bd496ee7dbb
+  sha256: 45c8cd982c85cd4faae573ddff6920de7eec735336db6973f26a765ae7950f7d
 
 build:
   skip: true  # [py<38]
@@ -43,7 +43,7 @@ requirements:
     - colorama >=0.4.6  # [win]
     - packaging >=23.2
     - requirements-parser >=0.11.0,<1
-    - tomli >=2.0.1  # [py<311]
+    - tomli >=2.0.1  # [py<315]
 
 test:
   imports:
