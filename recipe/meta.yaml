@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/deptry-{{ version }}.tar.gz
   sha256: 45c8cd982c85cd4faae573ddff6920de7eec735336db6973f26a765ae7950f7d
 
 build:
@@ -22,7 +22,7 @@ build:
     echo "building..."
     {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 0
+  number: 1
 
 requirements:
   build:
